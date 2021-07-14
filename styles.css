@@ -1,0 +1,25 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+/* navigation bar setup */
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+}
+.navigation-bar-mobile {
+    display: flex;
+    justify-content: space-around;
+    display: none;
+}
+
+/* mobile view setup */
+@media screen and (max-width: 768px) {
+    .navigation-bar-mobile {
+        display: flex;
+    }
+    .navigation-bar{
+        display: none;
+    }
+}
