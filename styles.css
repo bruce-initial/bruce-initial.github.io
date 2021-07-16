@@ -177,7 +177,6 @@ body a{
 }
 
 .main-container > div{
-    /* height: 100vh; */
     scroll-snap-align: start;
 }
 
@@ -239,5 +238,10 @@ body a{
         display: flex;
         flex-direction: column;
         width: auto;
+    }
+
+    /* learning div setup */
+    .learning .cards .card {
+        width: 100%;
     }
 }
