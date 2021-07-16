@@ -1,34 +1,58 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #222;
 }
+
+body a{
+    text-decoration: none;
+    color: #222;
+}
+
+.main-container{
+    scroll-snap-type: y proximity;
+}
+
+
 
 /* navigation bar */
 .navigationbar {
     display: flex;
 }
-
 .navigationbar .links {
     display: flex;
     flex: 1;
     justify-content: flex-end;
+    align-items: center;
+    margin-right: 16px;
 }
-
 .navigationbar .links .link {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
-
 .navigationbar .logo {
     flex: 1;
+    display: flex;
+    align-items: center;
 }
-
+.navigationbar .logo img{
+    height: 32px;
+}
+.navigationbar .logo span:last-child {
+    color: lightgray;
+}
 .navigationbar-mobile {
     display: flex;
     justify-content: space-around;
 
     display: none;
 }
+
+
 
 
 /* poster */
@@ -43,23 +67,26 @@ body {
 .poster .picture img {
     width: 100%;
 }
-
 .poster .text {
     width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: #666;
 }
-
 .poster .text .button{
     width: 200px;
-    background-color: grey;
+    background-color: #666;
     color: white;
     border: none;
     padding-top: 8px;
     padding-bottom: 8px;
     text-align: center;
 }
+
+
+
+
 
 
 /* main setup */
@@ -85,17 +112,18 @@ body {
 .main .right-content {
     width: 30%;
 }
-
 .main .right-content .right-sub-content{
     width: 100%;
     display: flex;
     padding: 32px 24px;
+    border: #ddd solid 1px;
 }
 .main .right-content .right-sub-content .image{
     width: 35%;
 }
 .main .right-content .right-sub-content .image{
     background-image: url('./src/images/information-orientation.jpg');
+    background-size: cover;
     width: 35%;
     height: auto;
 }
@@ -106,17 +134,58 @@ body {
     background-color: lightgrey;
     transition: 0.5s;
 }
+.main .right-sub-content a{
+    color:cornflowerblue;
+}
+
+
+/* div for START LEARNING */
+.learning {
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.learning .title {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.learning .cards {
+    position: relative;
+    left: 56px;
+    width: calc(100% - 56px - 56px);
+    display: flex;
+    flex-wrap: wrap;
+}
+.learning .cards .card {
+    margin: 16px;
+    width: calc((100% - 6 * 16px) / 3 );
+}
+.learning .cards .card .image img{
+    width: 100%;
+}
+.learning .cards .card .text {
+    background-color: #fff;
+    padding: 16px 16px 32px;
+}
 
 
 
 
+
+/* responsive design */
 @media screen and (max-width: 768px){
+
+    /* navigation bar setup */
     .navigationbar-mobile {
         display: flex;
     }
     .navigationbar {
         display: none;
     }
+
+    /* poster setup */
     .poster{
         display: flex;
         flex-direction: column;
@@ -140,12 +209,12 @@ body {
         right: 10px;
     }
 
-
+    /* main setup */
     .main .left-content{
         display: none;
     }
     .main .right-content {
-        width: 93%;
+        width: 100%;
     }
     .main .right-content .right-sub-content .image {
         width: 100%;
@@ -158,5 +227,6 @@ body {
     .main .right-content .right-sub-content{
         display: flex;
         flex-direction: column;
+        width: auto;
     }
 }
