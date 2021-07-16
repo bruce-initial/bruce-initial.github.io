@@ -1,12 +1,9 @@
 html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
-}
-
-body {
     font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #222;
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
 }
 
 body a{
@@ -19,6 +16,8 @@ body a{
 /* navigation bar */
 .navigationbar {
     display: flex;
+    transition: 0.5s;
+    padding-top: 5px;
 }
 .navigationbar .links {
     display: flex;
@@ -165,6 +164,21 @@ body a{
 .learning .cards .card .text {
     background-color: #fff;
     padding: 16px 16px 32px;
+}
+
+
+
+
+/* scroll snap setting */
+.main-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.main-container > div{
+    /* height: 100vh; */
+    scroll-snap-align: start;
 }
 
 
